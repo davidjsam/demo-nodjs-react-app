@@ -1,0 +1,42 @@
+name: Deploy to Azure
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
+        cache: 'npm'
+
+    - name: Install Dependencies
+      run: |
+        npm run install-all
+      
+    - name: Run Tests
+      run: |
+        npm test
+        if [ $? -ne 0 ]; then
+          echo "Tests failed, aborting deployment"
+          exit 1
+        fi
+
+    - name: Build Client
+      run: npm run build
+
+    - name: Deploy to Azure
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        package: .
