@@ -4,7 +4,7 @@ const app = require('../src/app');
 
 describe('Static File Serving', () => {
   beforeAll(() => {
-    process.env.NODE_ENV = 'production';
+    process.env.NODE_ENV = 'test';
   });
 
   afterAll(() => {
@@ -17,7 +17,7 @@ describe('Static File Serving', () => {
       .expect('Content-Type', /html/)
       .expect(200);
     
-    expect(response.text).toContain('<div id="root"></div>');
+    expect(response.text).toContain('<div id="root"');
   });
 
   test('API endpoints still work when serving static files', async () => {

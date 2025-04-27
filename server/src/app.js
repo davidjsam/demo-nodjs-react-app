@@ -14,16 +14,17 @@ app.use(express.json());
 // API routes
 app.use('/api', apiRoutes);
 
-// Serve static files and handle client routing in production
-if (process.env.NODE_ENV === 'production') {
+// Serve static files and handle client routing
+if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'test') {
   // Serve static files from React build
   app.use(express.static(path.join(__dirname, '../../client/build')));
   
   // Handle client routing - return all requests to the React app
-  app.get('*', (req, res) => {
-    if (!req.path.startsWith('/api')) {
-      res.sendFile(path.join(__dirname, '../../client/build/index.html'));
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api')) {
+      return next();
     }
+    res.sendFile(path.join(__dirname, '../../client/build/index.html'));
   });
 }
 

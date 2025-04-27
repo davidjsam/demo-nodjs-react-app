@@ -16,23 +16,22 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '18.x'
+        node-version: '20.x'
         cache: 'npm'
 
     - name: Install Dependencies
       run: |
         npm run install-all
-      
-    - name: Run Tests
-      run: |
-        npm test
-        if [ $? -ne 0 ]; then
-          echo "Tests failed, aborting deployment"
-          exit 1
-        fi
 
     - name: Build Client
-      run: npm run build
+      run: |
+        cd client && npm run build
+        
+    - name: Run Tests
+      run: |
+        NODE_ENV=test npm test
+      env:
+        CI: true
 
     - name: Deploy to Azure
       uses: azure/webapps-deploy@v2
