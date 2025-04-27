@@ -1,2 +1,4 @@
 [config]
-command = npm start
+SCM_DO_BUILD_DURING_DEPLOYMENT=true
+WEBSITE_NODE_DEFAULT_VERSION=20.x
+NODE_ENV=production
