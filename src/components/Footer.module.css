@@ -1,0 +1,23 @@
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+.text {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .footer {
+    padding: 0.8rem;
+  }
+  
+  .text {
+    font-size: 0.8rem;
+  }
+}

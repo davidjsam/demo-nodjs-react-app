@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Responsive Layout renders correctly at different screen sizes: desktop 1`] = `
+<div>
+  <div
+    class="app"
+  >
+    <nav
+      class="navbar"
+    >
+      <ul
+        class="navList"
+      >
+        <li>
+          <a
+            href="#home"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="#about"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            href="#contact"
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main
+      class="main"
+    >
+      <h1
+        class="title"
+      >
+        Welcome to Breaking Grounds Network
+      </h1>
+    </main>
+    <footer
+      class="footer"
+    >
+      <p
+        class="text"
+      >
+        © 2025 Breaking Grounds Network
+      </p>
+    </footer>
+  </div>
+</div>
+`;
+
+exports[`Responsive Layout renders correctly at different screen sizes: mobile 1`] = `
+<div>
+  <div
+    class="app"
+  >
+    <nav
+      class="navbar"
+    >
+      <ul
+        class="navList"
+      >
+        <li>
+          <a
+            href="#home"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="#about"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            href="#contact"
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main
+      class="main"
+    >
+      <h1
+        class="title"
+      >
+        Welcome to Breaking Grounds Network
+      </h1>
+    </main>
+    <footer
+      class="footer"
+    >
+      <p
+        class="text"
+      >
+        © 2025 Breaking Grounds Network
+      </p>
+    </footer>
+  </div>
+</div>
+`;
+
+exports[`Responsive Layout renders correctly at different screen sizes: tablet 1`] = `
+<div>
+  <div
+    class="app"
+  >
+    <nav
+      class="navbar"
+    >
+      <ul
+        class="navList"
+      >
+        <li>
+          <a
+            href="#home"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="#about"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            href="#contact"
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main
+      class="main"
+    >
+      <h1
+        class="title"
+      >
+        Welcome to Breaking Grounds Network
+      </h1>
+    </main>
+    <footer
+      class="footer"
+    >
+      <p
+        class="text"
+      >
+        © 2025 Breaking Grounds Network
+      </p>
+    </footer>
+  </div>
+</div>
+`;
